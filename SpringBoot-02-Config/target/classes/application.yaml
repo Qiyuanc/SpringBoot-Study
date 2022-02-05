@@ -1,0 +1,13 @@
+person:
+  name: qiyuan
+  age: 18
+  happy: true
+  birth: 2000/01/18
+  maps: {key1: value1,key2: value2}
+  lists:
+    - bbb
+    - lol
+    - apex
+  dog:
+    name: "小狗"
+    age: 3

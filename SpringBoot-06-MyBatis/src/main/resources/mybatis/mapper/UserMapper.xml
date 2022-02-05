@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间：接口类 -->
+<mapper namespace="com.qiyuan.mapper.UserMapper">
+
+    <!-- 配置了包扫描，此处就可以直接用 User 而不用全路径名 -->
+    <select id="queryUserList" resultType="User">
+        select * from user
+    </select>
+
+    <!-- #{} 相当于预编译语句 ${}相当于普通语句 -->
+    <select id="queryUserById" resultType="User">
+        select * from user where id=#{id}
+    </select>
+
+    <insert id="addUser" parameterType="User">
+        insert into user(id,name,pwd) values (#{id},#{name},#{pwd})
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+        update user set name=#{name},pwd=#{pwd} where id=#{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
+
+</mapper>

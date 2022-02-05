@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间：接口类 -->
+<mapper namespace="com.qiyuan.mapper.UserMapper">
+
+    <!-- 配置了包扫描，此处就可以直接用 User 而不用全路径名 -->
+    <select id="queryUserByName" parameterType="String" resultType="User">
+        select * from user where name=#{name}
+    </select>
+
+</mapper>
